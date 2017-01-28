@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="bmi-quick">
+  <head>
+    <meta charset="utf-8">
+    <title>BMI, Quick!</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="app.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div class="">
+      <input type="text" name="height" value="" ng-model="metricHeight"> m <br>
+      <input type="text" name="weight" value="" ng-model="metricWeight"> kg
+      <div class="output">
+        {{ ( metricWeight ) / ( metricHeight * metricHeight ) | number:2 }}
+      </div>
+    </div>
+  </body>
+</html>
