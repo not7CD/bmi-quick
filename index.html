@@ -27,24 +27,22 @@
 		<header>
 			<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span>
 			<h1 id="logo"><a href="#">BMI, Quick!</a></h1>
-			<p>Simple BMI calculator</p>
+			<p>Simple Body Mass Index calculator.</p>
 		</header>
 		<nav id="nav">
 			<ul>
 				<li><a href="#calculator" class="active">Calculator</a></li>
-				<!-- <li><a href="#two">Things I Can Do</a></li> -->
+				<li><a href="#graph">Graph</a></li>
 				<!-- <li><a href="#three">A Few Accomplishments</a></li> -->
 				<li><a href="#about">About</a></li>
 			</ul>
 		</nav>
 		<footer>
-			<ul class="icons">
+			<!-- <ul class="icons">
 				<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-				<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-				<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 				<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
 				<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
-			</ul>
+			</ul> -->
 		</footer>
 	</section>
 
@@ -60,19 +58,30 @@
 					<header class="major">
 						<h2 class="output">BMI: {{ ( metricWeight ) / ( metricHeight * metricHeight ) | number:2 }}</h2>
 					</header>
-					<div class="row uniform">
-						<div class="6u 12u(xsmall)"><input type="text" name="height" ng-model="metricHeight" id="height" placeholder="meters" /></div>
-						<div class="6u 12u(xsmall)"><input type="text" name="weight" ng-model="metricWeight" id="weight" placeholder="kilograms" /></div>
-					</div>
-					<div class="row uniform">
-						<div class="12u">
-							<ul class="actions">
-								<li><input type="submit" class="special" value="Send Message" /></li>
-								<li><input type="reset" value="Reset Form" /></li>
-							</ul>
+					<form>
+						<div class="row uniform">
+							<div class="6u 12u(xsmall)"><input type="text" name="height" ng-model="metricHeight" id="height" placeholder="meters" /></div>
+							<div class="6u 12u(xsmall)"><input type="text" name="weight" ng-model="metricWeight" id="weight" placeholder="kilograms" /></div>
 						</div>
+						<div class="row uniform">
+							<div class="12u">
+								<ul class="actions">
+									<!-- <li><input type="submit" class="special" value="Send Message" /></li> -->
+									<li><input type="reset" value="Reset Form" /></li>
+								</ul>
+							</div>
+					</form>
 					</div>
 
+				</div>
+			</section>
+
+			<!-- Graph -->
+
+			<section id="graph">
+				<div class="container">
+
+					<img width="100%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Body_mass_index_chart.svg/690px-Body_mass_index_chart.svg.png" alt="Wikipedia chart">
 				</div>
 			</section>
 
