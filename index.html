@@ -2,124 +2,76 @@
 <!--
 	BMI, Quick! by not7CD
 	not7cd.net | @not7cd
-
-	Read Only by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html ng-app="bmi-quick">
+<html ng-app="bmiQuick">
 
 <head>
 	<title>BMI, Quick!</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 
-
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="bootstrap.min.css">
 </head>
 
 <body>
 
-	<!-- Header -->
-	<section id="header">
-		<header>
-			<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span>
-			<h1 id="logo"><a href="#">BMI, Quick!</a></h1>
-			<p>Simple Body Mass Index calculator.</p>
-		</header>
-		<nav id="nav">
-			<ul>
-				<li><a href="#calculator" class="active">Calculator</a></li>
-				<li><a href="#graph">Graph</a></li>
-				<!-- <li><a href="#three">A Few Accomplishments</a></li> -->
-				<li><a href="#about">About</a></li>
-			</ul>
-		</nav>
-		<footer>
-			<ul class="icons">
-				<li><a href="https://twitter.com/not7CD" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-				<li><a href="https://github.com/not7CD/bmi-quick" class="icon fa-github"><span class="label">Github</span></a></li>
-				<!-- <li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li> -->
-			</ul>
-		</footer>
-	</section>
-
-	<!-- Wrapper -->
-	<div id="wrapper">
-
-		<!-- Main -->
-		<div id="main">
-
-			<!-- Calculator -->
-			<section id="calculator">
-				<div class="container">
-					<header class="major">
-						<h2 class="output">BMI: {{ ( metricWeight ) / ( metricHeight * metricHeight ) | number:2 }}</h2>
-					</header>
-					<form>
-						<div class="row uniform">
-							<div class="6u 12u(xsmall)"><input type="text" name="height" ng-model="metricHeight" id="height" placeholder="meters" /></div>
-							<div class="6u 12u(xsmall)"><input type="text" name="weight" ng-model="metricWeight" id="weight" placeholder="kilograms" /></div>
-						</div>
-						<div class="row uniform">
-							<div class="12u">
-								<ul class="actions">
-									<!-- <li><input type="submit" class="special" value="Send Message" /></li> -->
-									<li><input type="reset" value="Reset Form" /></li>
-								</ul>
-							</div>
-					</form>
-					</div>
-
-				</div>
-			</section>
-
-			<!-- Graph -->
-
-			<section id="graph">
-				<div class="container">
-
-					<img width="100%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Body_mass_index_chart.svg/690px-Body_mass_index_chart.svg.png" alt="Wikipedia chart">
-				</div>
-			</section>
-
-			<!-- About -->
-			<section id="about">
-				<div class="container">
-					<h3>About</h3>
-					<p>Simple calculator to quickly measure your BMI.</p>
-
-				</div>
-			</section>
-
-
-		</div>
-
-		<!-- Footer -->
-		<section id="footer">
-			<div class="container">
-				<ul class="copyright">
-					<li>Code: <a href="not7cd.net">not7CD</a></li>
-					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-				</ul>
+	<!-- Main Container -->
+	<div class="container">
+		</br>
+		<div class="row">
+		<!-- Header -->
+		<div class="col-xs-12 col-md-4 col-md-push-8">
+			<!-- <div class="col-xs-3 col-sm-2 col-md-1 hidden-xs">
+				<img class="img-circle img-responsive" src="images/avatar.jpg" alt="" />
+			</div> -->
+			<div class="col-xs-12 col-sm-12">
+				<h1 id="logo"><a href="#">BMI, Quick!</a></h1>
+				<p>Simple Body Mass Index calculator.</p>
 			</div>
-		</section>
-
+		</div>
+	</br>
+		<!-- Calculator -->
+		<div class="col-xs-12 col-md-8 col-md-pull-4">
+				<!-- Input -->
+				<div class="">
+					<div class="form-group">
+						<label for="height">Height</label>
+						<div class="input-group">
+							<div id="height" class="form-control"><input type="text" name="height" ng-model="metricHeight" placeholder="" /></div>
+							<div class="input-group-btn"><height-unit></height-unit></div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="weight">Weight</label>
+						<div class="input-group">
+							<div id="weight" class="form-control"><input type="text" name="weight" ng-model="metricWeight" placeholder="" /></div>
+							<div class="input-group-btn"><weight-unit></weight-unit></div>
+						</div>
+					</div>
+				</div>
+				<!-- End Input -->
+				<!-- Output -->
+				<div class="">
+					<div class="form-group">
+						<label for="bmi-output">BMI</label>
+						<input id="bmi-output" class="form-control" type="text" placeholder="{{ ( metricWeight ) / ( metricHeight * metricHeight / 100 / 100 ) | number:2 }}" readonly>
+					</div>
+				</div>
+				<!-- End Output  -->
+		</div>
+		<!-- End Calculator -->
+		</div>
 	</div>
 
 	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrollzer.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/skel.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-	<script src="assets/js/main.js"></script>
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-	<script src="app.js" charset="utf-8"></script>
+	<script src="app/app.js" charset="utf-8"></script>
+	<script src="app/weight-unit.component.js" charset="utf-8"></script>
+	<script src="app/height-unit.component.js" charset="utf-8"></script>
+
 </body>
 
 </html>
